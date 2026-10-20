@@ -5,6 +5,17 @@ A responsive medication schedule and reminder web app for users and caregivers. 
 **Live demo:** [https://smart-pillpack.onrender.com](https://smart-pillpack.onrender.com)
 **Repository:** [https://github.com/Rithigaraj/medication-pillpack](https://github.com/Rithigaraj/medication-pillpack)
 
+## About
+
+Smart PillPack is a full-stack medication reminder system built with Flask and SQLite, designed to keep elderly users and their caregivers in sync. Highlights:
+
+- **3D animated landing page** — the sign-in page renders an interactive Three.js particle swarm that reacts to your mouse and auto-plays a subtle idle animation (with a lightweight fallback if WebGL is unavailable).
+- **Notification system** — dose reminders show an in-page popup with a gentle sound and a five-minute snooze, plus native browser notifications when permission is granted; a missed-dose background poller (every 45 s) keeps statuses fresh even when no page is open.
+- **Firebase Cloud Messaging (FCM)** — caregivers can enable push alerts from the caregiver overview; when a dose flips to *Missed*, the server sends a real push notification to every linked caregiver device (Firebase Admin service-account JWT → FCM HTTP v1 API) with a service worker so alerts arrive even with all tabs closed.
+- **Caregiver linking** — patients link caregivers by email from their profile; caregivers get a live-refreshing overview (auto-updates every 30 s) and can mark linked doses as taken with one tap.
+- **Email OTP password reset** — 6-digit codes via Gmail SMTP with expiry, attempt limits, and resend rate-limiting.
+- **Insights** — daily/weekly/monthly history, adherence percentages, and CSV export.
+
 ## Requirements
 
 - Python 3.10 or newer
